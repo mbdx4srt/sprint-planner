@@ -1,0 +1,47 @@
+<!--<div class="board">-->
+        <!--    {{#each board_list }}-->
+<!--        <div class="card" id ="{{@key}}">-->
+<!--            <div class="card-header">{{@key}}</div>-->
+<!--        <ul class="list-group list-group-flush">-->
+        <!--            {{#each this }}-->
+<!--                <a  href="/edit/{{this.id}}">-->
+<!--                    <li class="list-group-item draggable" draggable="true" id ="{{this.id}}">{{ this.name}}</li>-->
+<!--                </a>-->
+<!--            </ul>-->
+        <!--            {{/each}}-->
+<!--        </div>-->
+        <!--    {{/each}}-->
+<!--</div>-->
+
+<div class=mainboard>
+    <div class = board>
+        <div>
+        <h1> Backlog </h1>
+        {{#each backlogitems}}
+            <p class="card">{{this.name}}</p>
+        {{/each}}
+        </div>
+    </div>
+    <div class = board>
+        <div>
+        <h1>Sprint Plan</h1>
+    <div class = mainboard>
+        {{#each board_list}}
+            <div>
+
+            <div class="body">
+                <h2>Sprint {{this.id}}</h2><p><br> {{this.from}}<br>
+            to <br>
+            {{this.to}}</p>
+            </div>
+            <div>
+            {{#each tasks}}
+                <p>{{this.name}}</p>
+            {{/each}}
+            </div>
+            </div>
+        {{/each}}
+    </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,47 @@
+body {
+  padding: 20px;
+  font: 28px "Univers for BP", "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #28a500;
+}
+
+p {
+  padding: 20px;
+  font: 14px "Univers for BP", "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #28a500;
+}
+
+
+#title{
+  text-align: center;
+}
+
+a {
+  color: #28a500;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  align-items: center;
+  justify-content: center
+}
+#card {
+  display: block;
+  text-decoration: none;
+  padding: 2rem;
+  margin: 10px;
+  width: 18rem;
+  border: 2px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  text-align: center;
+  font: 28px "Univers for BP", "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #28a500;
+}
+.mainboard {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 15px;
+  /*align-items: center;*/
+  justify-content: center
+}

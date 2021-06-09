@@ -1,0 +1,12 @@
+
+<h1 id="title">All Squads</h1>
+<section>
+    <div class="board">
+    {{#each squads}}
+        <a id="card" href="/board/{{this.id}}">
+               {{this.name}}
+        </a>
+    {{/each}}
+    </div>
+
+</section>

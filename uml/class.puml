@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Squad -- Backlog
+Backlogitem }|-- Backlog
+Sprint }|-- Squad
+Backlogitem -- Sprint
+
+
+class Squad{
+name
+ftes
+}
+
+class Backlog{
+name
+}
+
+class Backlogitem{
+name
+storypoints
+}
+
+class Sprint{
+from
+to
+capacity
+}
+
+@enduml
