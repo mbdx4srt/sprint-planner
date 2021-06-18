@@ -68,7 +68,6 @@ async function populateDB() {
                 pos: zitem.pos,
                 description: zitem.description,
                 SprintId: zitem.sprintid,
-
             })
             await  curr_bli.setBacklog(curr_bl)
         }

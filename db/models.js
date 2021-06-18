@@ -1,5 +1,5 @@
+'use strict'
 const { sequelize, DataTypes, Model } = require("./db");
-
 const options = { sequelize, timestamps: false };
 
 // Define Squad

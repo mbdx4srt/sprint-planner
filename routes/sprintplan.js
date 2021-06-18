@@ -1,6 +1,6 @@
-var express = require('express');
-var router = express.Router();
-var dateFormat = require('dateformat');
+const express = require('express');
+const router = express.Router();
+const dateFormat = require('dateformat');
 const {Squad, Sprint, Backlogitem, Backlog} = require('../db/models');
 /* GET home page. */
 const { Op } = require("sequelize");
@@ -10,6 +10,7 @@ router.get("/:id", async (req, res, next)=> {
   console.debug(squad)
   const backlogs = await squad.getBacklog();
   console.debug(backlogs)
+  const backlogid = backlogs.id
   const backlogitems = await backlogs.getBacklogitems({
     where: {
       SprintId: {
@@ -38,8 +39,8 @@ router.get("/:id", async (req, res, next)=> {
     // console.debug(list_tasks)
      var sprint_item = {
        "id" : list.id,
-       "from" : dateFormat(list.from, "ddd, dS mmmm yyyy"),
-       "to" : dateFormat(list.to,"ddd, dS mmmm yyyy"),
+       "from" : dateFormat(list.from, "ddd, d mmm yy"),
+       "to" : dateFormat(list.to,"ddd, d mmm yy"),
        "capacity" : list.capacity,
        "tasks" : list_tasks
      }
@@ -50,7 +51,7 @@ router.get("/:id", async (req, res, next)=> {
   }
   console.log(board_list);
 
- res.render('board', { board_list, backlogitems});
+ res.render('board', { board_list, backlogitems, backlogid});
 });
 
 module.exports = router;

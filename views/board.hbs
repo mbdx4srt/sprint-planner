@@ -12,36 +12,45 @@
 <!--        </div>-->
         <!--    {{/each}}-->
 <!--</div>-->
-
+<head>
+    <script src="/javascripts/drop.js" defer></script>
+</head>
 <div class=mainboard>
-    <div class = board>
-        <div>
-        <h1> Backlog </h1>
-        {{#each backlogitems}}
-            <p class="card">{{this.name}}</p>
-        {{/each}}
+    <div class=board>
+        <div class="column">
+            <h2> Backlog </h2>
+            {{#each backlogitems}}
+                <div class="bli" draggable="true" id="{{this.id}}">
+                    <p class="card">{{this.name}}</p>
+                </div>
+            {{/each}}
+
+            <a id="cardb" href="/task?board={{backlogid}}" role="button">+</a>
+
         </div>
     </div>
-    <div class = board>
+    <div class=board>
         <div>
-        <h1>Sprint Plan</h1>
-    <div class = mainboard>
-        {{#each board_list}}
-            <div>
+            <h2>Sprint Plan</h2>
+            <div class=mainboard>
+                {{#each board_list}}
+                    <div class="column" id="{{this.id}}">
+                        <div>
+                            <h3>Sprint {{this.id}}</h3>
+                            <p><br> {{this.from}} to <br>
+                                {{this.to}}</p>
+                        </div>
+                        <div>
+                            {{#each tasks}}
+                                <div class="bli" draggable="true" id="{{this.id}}">
+                                    <p>{{this.name}}</p>
+                                </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
 
-            <div class="body">
-                <h2>Sprint {{this.id}}</h2><p><br> {{this.from}}<br>
-            to <br>
-            {{this.to}}</p>
-            </div>
-            <div>
-            {{#each tasks}}
-                <p>{{this.name}}</p>
-            {{/each}}
-            </div>
-            </div>
-        {{/each}}
-    </div>
-    </div>
-</div>
-</div>
