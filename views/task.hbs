@@ -1,0 +1,39 @@
+<div class="container">
+    <h1 id="board"></h1>
+    <div class="row">
+        <div class="col-md-6">
+            <form action="/task" method="POST">
+            <div class="columne">
+                <div>
+                <label>Title:
+                    <input type="text" name="name" class="form-control" placeholder="Short Name for Backlog Item" size="50">
+                </label><br>
+                </div>
+                <div>
+                <label>Description:
+                    <input type="textarea" name="description" class="form-control" placeholder="Longer Description here" size="50">
+                </label><br>
+                    </div>
+                <div>
+                <label>Story Points:
+                     <input type="textarea" name="Story Points" class="form-control" placeholder="10">
+                </label><br>
+                    </div>
+                <input type="hidden" name ="BoardId" id="BoardId">
+            </div>
+            <button type="submit" value="Submit" class="btn btn-primary" id="btnAdd">Add</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const board = urlParams.get('board')
+    console.log(board);
+    var new_text = 'Add task to backlog '.concat(board);
+    document.getElementById("board").innerHTML = new_text
+    document.getElementById("BoardId").value = board
+</script>
