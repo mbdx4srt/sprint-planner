@@ -1,3 +1,4 @@
+require('dotenv').config()
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -27,10 +28,10 @@ const { auth } = require('express-openid-connect');
 const config = {
   authRequired: true,
   auth0Logout: true,
-  secret: '97826738c07eec91c419b70191d0396af8165e0f55519a2ead639500878fb95c',
-  baseURL: 'http://localhost:3000',
-  clientID: 'MfwsKuu006nwnaagApJnhEa6JRt9Rism',
-  issuerBaseURL: 'https://dev-chpoz9x4.eu.auth0.com'
+  secret: process.env.A0_SECRET,
+  baseURL: process.env.BASE_URL,
+  clientID: process.env.CLIENT_ID ,
+  issuerBaseURL: process.env.ISSUER_BASE_URL
 };
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
