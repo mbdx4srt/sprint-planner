@@ -29,12 +29,12 @@ a {
 .board {
   display: flex;
   flex-wrap: wrap;
-  margin: 2px;
+  margin: 0px;
   /*align-items: first;*/
   justify-content: center;
   vertical-align: top;
   /*border: 2px solid rgba(0, 0, 0, 0.125);*/
-  padding: 10px;
+  padding: 0px;
   text-align: center;
 
 
@@ -67,11 +67,16 @@ a {
 .mainboard {
   display: flex;
   flex-wrap: nowrap;
-  margin: 5px;
-  padding: 5px;
+  margin: 2px;
+  padding: 2px;
   justify-content: center;
   text-align: center;
   /*border: 2px solid rgba(0, 0, 0, 0.125);*/
+}
+
+#sprintboard{
+  flex-wrap: wrap;
+  justify-content: left;
 }
 
 .bli {
